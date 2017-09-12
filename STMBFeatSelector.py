@@ -18,11 +18,13 @@ class STMBFeatSelector:
 	but should be expressed in a numerical form.
 
 	B: The corresponding labels as a vector in a numerical form. This should be a 
-	row vector, and the length should be identifcal to the number of raw in A
+	column vector, and the length should be identifcal to the number of rows in A
 
 	Output:
 
 	W: Dimensionality reduced vectors, it is a numpy matrix with one row per vector.
+	Concretely, the number of rows is also identical to A
+	
 	"""
 
 	is_feature_selection = True
@@ -39,7 +41,7 @@ class STMBFeatSelector:
 
     		my_stmb = STMBv1_0.initialize()
     		k = np.array(my_stmb.STMB_binsearch(), dtype=np.int16)
-		print k.shape
+		
     		m, n = k.shape
     		k = np.reshape(k, [m, ])
 
